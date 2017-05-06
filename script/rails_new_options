@@ -1,0 +1,31 @@
+#!/bin/bash
+set -eu
+
+cat <<EOF > /dev/null
+Rails 5.1.0 "rails new" options
+
+--skip-yarn           # Don't use Yarn for managing JavaScript dependencies
+--skip-gemfile        # Don't create a Gemfile
+--skip-git            # Skip .gitignore file
+--skip-keeps          # Skip source control .keep files
+--skip-action-mailer  # Skip Action Mailer files
+--skip-active-record  # Skip Active Record files
+--skip-puma           # Skip Puma related files
+--skip-action-cable   # Skip Action Cable files
+--skip-sprockets      # Skip Sprockets files
+--skip-spring         # Don't install Spring application preloader
+--skip-listen         # Don't generate configuration that depends on the listen gem
+--skip-coffee         # Don't use CoffeeScript
+--skip-javascript     # Skip JavaScript files
+--skip-turbolinks     # Skip turbolinks gem
+--skip-test           # Skip test files
+--skip-system-test    # Skip system test files
+--dev                 # Setup the application with Gemfile pointing to your Rails checkout
+--edge                # Setup the application with Gemfile pointing to Rails repository
+--rc=RC               # Path to file containing extra configuration options for rails command
+--no-rc-rc            # Skip loading of extra configuration options from .railsrc file
+--api                 # Preconfigure smaller stack for API only apps
+--skip-bundle         # Don't run bundle install
+EOF
+
+echo "--skip-action-mailer --skip-action-cable --skip-sprockets --skip-coffee --skip-javascript --skip-turbolinks --skip-bundle"
